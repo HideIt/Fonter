@@ -1,8 +1,7 @@
 <resources>
 	<string name="app_name">Fonter</string>
-	<string name="size_bar">SIZE : 16</string>
-	<string name="type_bar">TYPE : 1</string>
+	<string name="example">EXAMPLE</string>
 	<string name="text_content">EXAMPLE\nExample\n示范</string>
 	<string name="edit_content">please input content</string>
-	<string name="end_edit_btn">OK</string>
+	<string name="end_edit_btn">finish</string>
 </resources>
