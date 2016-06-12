@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.SpannableString;
-import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -123,11 +121,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	}
 
 	private void setContent(int fontLocation, int typeLocation, CharSequence text) {
-		Typeface typeface = Typeface.create(fontMap.get(fontList.get(fontLocation)), typeLocation);
-		SpannableString string = new SpannableString(text);
-		string.setSpan(typeface, 0, string.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-//		for (Object obj : string.getSpans(0, string.length(), Object.class)) string.removeSpan(obj);
-		content.setText(string);
+//		Typeface typeface = Typeface.create(fontMap.get(fontList.get(fontLocation)), typeLocation);
+//		SpannableString ss = new SpannableString(text);
+//		ss.setSpan(new StyleSpan(typeLocation), 0, ss.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+//
+//		for (Object obj : ss.getSpans(0, ss.length(), Object.class)) ss.removeSpan(obj);
+//		content.setText(ss);
+
+		content.setText(text);
+		content.setTypeface(fontMap.get(fontList.get(fontLocation)), typeLocation);
 	}
 
 	@Override
