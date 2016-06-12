@@ -1,7 +1,8 @@
 <resources>
 	<string name="app_name">Fonter</string>
 	<string name="example">EXAMPLE</string>
-	<string name="text_content">EXAMPLE\nExample\n示范</string>
+	<string name="text_content">EXAMPLE Example 示范\n测试锁屏时钟\n(锁屏时钟使用的字体是 sans-serif-thin style = NORMAL)\n18 \uEE01
+		23</string>
 	<string name="edit_content">please input content</string>
 	<string name="end_edit_btn">finish</string>
 </resources>

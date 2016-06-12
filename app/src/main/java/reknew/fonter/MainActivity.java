@@ -139,10 +139,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	@Override
 	public void onStopTrackingTouch(SeekBar seekBar) {
 		switch (seekBar.getId()) {
-			case R.id.seek_bar_size:
+			case R.id.seek_bar_font:
 				currentFont = seekBar.getProgress();
 				break;
-			case R.id.seek_bar_font:
+			case R.id.seek_bar_type:
 				currentType = seekBar.getProgress();
 		}
 	}
