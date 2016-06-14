@@ -3,6 +3,7 @@ package reknew.fonter;
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		fontCtrl.setProgress(0);
 		fontCtrl.setOnSeekBarChangeListener(this);
 
+
+		//TODO 改变text字重 以及更多type
+
+
 		//TODO 检测锁屏时钟的冒号能否正常显示
 		//但需要先指定字体是 "sans-serif" && weight = 100 && style = normal
 /*		try {
@@ -98,6 +104,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			Utils.d(s + "\n");
 		}
 		Utils.d("**********IMPORTANT**********");*/
+
+
+		//Typeface lucida = Typeface.createFromAsset(getAssets(), "fonts/lucida.ttf");
+		//Typeface lucida = Typeface.createFromFile("/storage/emulated/0/lucida.ttf");
+
+		Utils.d(Environment.getExternalStorageState());
+		try {
+			Typeface lucida = Typeface.createFromFile(new File(Environment.getExternalStorageDirectory(), "font.ttf"));
+			content.setTypeface(lucida, Typeface.NORMAL);
+			content.setTextSize(32);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Utils.e("load font Exception");
+		}
 	}
 
 	@SuppressLint("SetTextI18n")
@@ -208,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			fontMap = (Map<String, Typeface>) f.get(typeface);
 			fontList = new ArrayList<>();
 			for (Map.Entry<String, Typeface> entry : fontMap.entrySet()) {
-				Utils.d(entry.getKey() + " ---> " + entry.getValue() + "\n");
+				//Utils.d(entry.getKey() + " ---> " + entry.getValue() + "\n");
 				fontList.add(entry.getKey());
 			}
 		} catch (Exception e) {
